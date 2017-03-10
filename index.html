@@ -199,12 +199,18 @@
 
 
    <div class="col-lg-8 col-md-8 myright">
+      <div>
           <h2>Heading</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
    </div>
 
-      
+    
+   <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
+
+    
+
 
       <hr>
 
@@ -215,6 +221,10 @@
     </div> <!-- /container -->
 
 
+
+
+
+    <script src="js/script.js" type="text/javascript"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -236,8 +246,7 @@
           raing: 5;
           area: 'Сихів, Львів';
           name: 'Вернадського';
-        }, {
-
+          image: 'http://previews.123rf.com/images/dimaberkut/dimaberkut1405/dimaberkut140501105/28724281-LVIV-UKRAINE-AUG-6-City-view-from-roof-historic-building-House-of-Legends-on-Aug-6-2012-in-Lviv-Ukra-Stock-Photo.jpg';
         }
       ];
 
@@ -248,10 +257,8 @@
             render: function() {
                 return (
                     <div>
-                      {}
-
-                      <img />
-                      <p>ghggjhg</p>
+                      <span className="heading">Title</span>
+                      <Subcomponent foo="bar" />
                     </div>
                 );
             }
