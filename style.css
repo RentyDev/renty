@@ -1,0 +1,18 @@
+.block{
+	display: block;
+}
+.block div{
+	margin-left: 50px;
+}
+.ok{
+	float: right;
+}
+button:hover{
+	background-color: #9FF781;
+}
+.myleft{
+	float: left;
+}
+.myright{
+	float: right;
+}
