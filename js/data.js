@@ -3,7 +3,7 @@ console.log("Im here");
 // DatabaseConnector
 var DC = {
     getBuilding: function(address) {
-        this.getComp("Стрийська");
+        this.getComp("Лісна");
     },
 
     // Address
