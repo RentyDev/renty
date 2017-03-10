@@ -85,7 +85,7 @@
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
         </div>-->
-        <div class="col-lg-5 col-md-5 myleft">
+        <div class="col-lg-4 col-md-4 myleft">
         <div class="list-group-item">
           <div class="block">
 <!--             <button data-toggle="collapse" data-target="#demo">Collapsible</button>
@@ -136,78 +136,90 @@
               </div><!--випливає-->
               </div>
 
-              <div class="block">
-              <p class="list-group-items list-group-item-action dropdown">Транспорт <b class="caret"></b></p>
-          <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+              <div data-toggle="collapse" data-target="#demo1">Комуналка </div>
+            <div class="collapse" id="demo1">
+                  <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Відсутнісь заторів
+                          <span></span>Електропостачання
                       </label>
                   </div>
                   <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Не перекриті дорожні шляхи
+                          <span></span>Водопостачання
                       </label>
                   </div>
                   <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Громадський транспорт
+                          <span></span>Опалення
                       </label>
-                  </div>
-          </div>
+                </div>
+                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                      <label>
+                          <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
+                          <span></span>Справність каналізації
+                      </label>
+                </div>
+                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                      <label>
+                          <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
+                          <span></span>Наявність ліфту
+                      </label>
+                </div>
+                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                      <label>
+                          <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
+                          <span></span>Відсутність шкідників
+                      </label>
+                </div>
+              </div><!--випливає-->
 
-          <div class="block">
-              <a href="#" class="list-group-items list-group-item-action dropdown">Дозвілля <b class="caret"></b></a>
-          <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+
+          <div data-toggle="collapse" data-target="#demo2">Комуналка </div>
+            <div class="collapse" id="demo2">
+                  <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Парки
+                          <span></span>Електропостачання
                       </label>
                   </div>
                   <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Спортивні майданчики
+                          <span></span>Водопостачання
                       </label>
                   </div>
                   <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Магазини
+                          <span></span>Опалення
                       </label>
-              </div>
-              <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                </div>
+                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Школи
+                          <span></span>Справність каналізації
                       </label>
-              </div>
-              <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                </div>
+                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Лікарні
+                          <span></span>Наявність ліфту
                       </label>
-              </div>
-              <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                </div>
+                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                       <label>
                           <input type="range" id="myRange" min="0" max="5"  value="5" step="1"> 
-                          <span></span>Аптеки
+                          <span></span>Відсутність шкідників
                       </label>
+                </div>
+              </div><!--випливає-->
               </div>
-              <hr>
-              <button type="button" class="btn btn-default ok">Підтвердити</button>
       </div>
   </div><!--col....-->
   </div>
-
-  <div class="container">
-      <div class="">
-        
-      </div>
-  </div>
-
 
    <div class="col-lg-8 col-md-8 myright">
       <div>
@@ -223,6 +235,31 @@
           <abbr title="Phone">P:</abbr> (123) 456-7890
         </address>
       </div>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      
    </div>
 
 
