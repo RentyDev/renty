@@ -18,9 +18,8 @@ in_queue = False
 lock = threading.Lock()
 
 class dbase:
-    # _dbpath = '/mirror.db'
     _db = None
-    _cn = None;
+    _cn = None
 
     # Connect to database
     @classmethod
