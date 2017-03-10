@@ -74,28 +74,25 @@ class dbase:
     # Commit changes and close
     @classmethod
     def close(self):
-        self._cn.commit()
         self._cn.close()
-
         lock.release()
 
     # Last added id
     @classmethod
     def last_id(self):
-        # return self.qry("select last_insert_rowid() as lid")[0]['lid'];
         return self._db.lastrowid
 
-    #TODO: Add Setup method to initate all of the tables
-    def setup(self):
-        self.connect()
-
-        # Create a basic weather test table
-        self.exe("""
-            CREATE TABLE IF NOT EXISTS temp_video (
-                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                v_path TEXT NOT NULL,
-                time INTEGER NOT NULL
-            )
-            """)
-
-        self.close()
+    # #TODO: Add Setup method to initate all of the tables
+    # def setup(self):
+    #     self.connect()
+    #
+    #     # Create a basic weather test table
+    #     self.exe("""
+    #         CREATE TABLE IF NOT EXISTS temp_video (
+    #             id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    #             v_path TEXT NOT NULL,
+    #             time INTEGER NOT NULL
+    #         )
+    #         """)
+    #
+    #     self.close()
