@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="img/homebuy.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
@@ -28,7 +28,12 @@
 <body ng-app="renty-ui">
 
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-        <a class="navbar-brand" href="#">Renty</a>
+
+        <div class="col-md-6">
+
+            <h2 style="color: #52c5d9;"><img src="img/homebuy.png">Renty</h2>
+        </div>
+
     </nav>
 
     <div class="container">
@@ -169,22 +174,22 @@
             <!-- <div class="container"> -->
             <div class="row" ng-repeat="item in items">
                 <div class="col-md-1">
-                    <h1>5</h1>
+                    <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <div class="col-md-3">
                         <img src="https://image.shutterstock.com/z/stock-vector-city-hall-cartoon-city-hall-cartoon-buildings-in-vector-city-hall-lviv-vector-image-of-a-396333235.jpg" style="height: 100px;">
                     </div>
-                    <div class="col-md-4">
-                        <h3><span class="font-awesome"><i class="fa fa-map-marker fa-2x"></i></span>Lviv, Ukraine</h3>
-                        <p>Some text</p>
+                    <div class="col-md-5">
+                        <h4><i class="glyphicon glyphicon-map-marker"></i> Район Львова</h4>
+                        <p><i class="glyphicon glyphicon-screenshot"></i> Вулиця, номер будинку</p>
                     </div>
                 </div>
-                <div class="col-md-2" style="text-align: right;">
-                    <div class="glyphicon glyphicon-star" aria-hidden="true"></div>
-                    <div class="glyphicon glyphicon-star" aria-hidden="true"></div><br>
-                    <div class="glyphicon glyphicon-star" aria-hidden="true"></div>
-                    <div class="glyphicon glyphicon-star" aria-hidden="true"></div>
+                <div class="col-md-3" style="text-align: right;">
+                    <h2 class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></h2>
+                    <h2 class="glyphicon glyphicon-heart-empty" aria-hidden="true"></h2>
+                    <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
+
 
                     <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
 
