@@ -1,25 +1,27 @@
-class DatabaseConnector {
-    // constructor() {
-    //
-    // }
+console.log("Im here");
 
-    getData(resource_id) {
-        var request = {
-            resource_id: resource_id, // the resource id
-            limit: 5, // get 5 results
-            q: 'jones' // query for 'jones'
-        };
-        let data = $.ajax({
-            url: 'http://opendata.city-adm.lviv.ua/api/action/datastore_search',
-            data: request,
+// DatabaseConnector
+var DC = {
+    getBuilding: function(address) {
+        this.getComp("Лісна");
+    },
+
+    // Address
+    //      street
+    //      no
+
+    getComp: function (addr, cb) {
+        $.ajax({
+            url: "http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT * from \"0ac8b05d-d53b-4c5e-a545-d79e5ec4cabb\" WHERE \'street\' = '"+addr+"'",
+
             dataType: 'jsonp',
             success: function(data) {
-              alert('Total results found: ' + data.result.total)
+                console.log(data.result);
             }
         });
     }
+
 }
 
-let database = new DatabaseConnector();
-console.log("Im here");
-console.log(database.getData('a42bf588-269d-4590-b19c-e940cab296fb'));
+// let database = new DatabaseConnector();
+console.log(DC.getBuilding('a42bf588-269d-4590-b19c-e940cab296fb'));
