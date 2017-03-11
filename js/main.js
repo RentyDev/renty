@@ -25,8 +25,8 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
         });
     };
 
-    this.getBuildings();
-    console.log($scope.items);
+    // this.getBuildings();
+    // console.log($scope.items);
 
     this.getComplaints = function (address, no) {
         $http({
@@ -43,6 +43,12 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
             console.log(response);
         });
     };
+
+    this.getComplaints("Широка", "67");
+
+    // this.calculateRating = function () {
+    //
+    // };
 
     // this.getBuilding("Авіаційна", "7");
 
