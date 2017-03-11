@@ -1,42 +1,30 @@
-<!-- <div class="container" ng-controller="Controller">
-    <div class="col-md-3 list-group-item">
-        <div class="block">
-
-            <!- - list-group-items list-group-item-action dropdown dropdown-toggle - ->
-            <div data-toggle="collapse" data-target="#demo">Діти </div>
-            <div class="collapse" id="demo">
-
-                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
-                    <label>
-                    <input type="range" id="myRange" min="0" max="5"  value="5" step="1">
-                    <span></span>Дитячи садок
-                </label>
-                </div>
-                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
-                    <label>
-                    <input type="range" id="myRange" min="0" max="5"  value="5" step="1">
-                    <span></span>Гуртки
-                </label>
-                </div>
-                <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
-                    <label>
-                    <input type="range" id="myRange" min="0" max="5"  value="5" step="1">
-                    <span></span>Дитячий майданчик
-                </label>
-
-                </div>
-                <div>
-
-                    <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                     <span></span>Справність каналізації
-
-                </div>
-
-                <div> -->
 <!--
 <div class="container">
     <div class="col-md-3 list-group-item">
         <div class="block">
+
+
+        <div data-toggle="collapse" data-target="#demo" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
+            <div class="collapse" id="demo">
+              <div>
+                    <div class="slider shor noUi-target noUi-ltr noUi-horizontal noUi-connect">
+                    <div class="noUi-base">
+                    <div class="noUi-origin noUi-background" style="left: 40%;">
+                    <div class="noUi-handle noUi-handle-lower"></div></div></div></div>
+                    <span></span>Електропостачання
+              </div>
+            <div>
+                    <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                    <span></span>Водопостачання
+            </div>
+            <div>
+                    <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                    <span></span>Опалення
+            </div>
+            <div>
+                    <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                    <span></span>Справність каналізації
+            </div>
 
         <div data-toggle="collapse" data-target="#demo" style="font-size: 22px;" class="list-group-item">Здоров'я<i class="caret"></i> </div>
             <div class="collapse" id="demo">
@@ -77,17 +65,14 @@
 
         <div data-toggle="collapse" data-target="#demo" style="font-size: 22px;" class="list-group-item">Здоров'я<i class="caret"></i> </div>
         <div class="collapse" id="demo">
+
             <div>
-
                     <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                    <span></span>Аптека
-
+                    <span></span>Наявність ліфту
             </div>
             <div>
-
                     <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                     <span></span>Лікарня
-
             </div>
 
 
@@ -180,14 +165,20 @@
             <!--випливає-->
         </div>
 
+
+
+
+
+
+
+
     </div>
 
 
 
 
     <div class="col-md-8" ng-controller="itm-ctr">
-      <!-- <div class="well infobox" style="margin-bottom: 100px;"> -->
-      <div class="row well infobox" style="margin-left: 50px;" ng-repeat="building in buildings">
+      <div class="row well infobox" style="margin-left: 50px;" ng-repeat="item in items">
             <div class="col-md-1">
                 <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
             </div>
@@ -195,70 +186,22 @@
                 <img src="img/house-icon.png" style="height: 100px;">
             </div>
             <div class="col-md-5">
-                <h4><i class="glyphicon glyphicon-map-marker"></i>{{building.district}}</h4>
-                <p><i class="glyphicon glyphicon-screenshot"></i> {{building.street}}, {{building.number}}</p>
+                <h4><i class="glyphicon glyphicon-map-marker"></i>{{item["Адреса"]}}, {{item["№ будинку"]}}</h4>
+                <p><i class="glyphicon glyphicon-screenshot"></i>{{item["р-н"]}} </p>
             </div>
 
             <div class="col-md-3">
-                <h2 class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></h2>
+                <!-- <h2 class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></h2>
                 <h2 class="glyphicon glyphicon-heart-empty" aria-hidden="true"></h2>
-                <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
+                <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2> -->
 
-
-                <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href ng-click="show()" role="button">Детальніше &raquo;</a></p>
+                <div style="height:34px"></div>
+                <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p>
             </div>
-
-      <!-- <p><em>Material Design for Bootstrap</em> is a theme for Bootstrap 3 which lets you use the new
-        <a href="http://www.google.com/design/spec/material-design/">Google Material Design</a> in your favorite front-end framework.
-      </p>
-
-      <p>If you like this project you can support me by donating something on Gittip, starring this repository, or
-        <a href="https://github.com/FezVrasta/bootstrap-material-design/issues">reporting bugs and ideas</a>.</p>
-
-      <p>Read more about <em>Material Design for Bootstrap</em>
-        <a href="https://github.com/FezVrasta/bootstrap-material-design">at the Github page</a>.</p>
-
-      <a href="https://github.com/FezVrasta/bootstrap-material-design/archive/master.zip" class="btn btn-sup btn-material-pink btn-raised">
-        <i class="material-icons">file_download</i>
-        <span>DOWNLOAD</span>
-      </a>
-      <a href="https://www.gittip.com/FezVrasta/" class="btn btn-sup btn-material-brown">
-        <i class="material-icons">favorite_border</i>
-        <span>GITTIP</span>
-      </a>
-      <a href="https://github.com/FezVrasta/bootstrap-material-design/issues" class="btn btn-sup btn-material-deeppurple">
-        <i class="material-icons">info_outline</i>
-        <span>ISSUES</span>
-      </a>-->
     </div><!--row-->
 
-
-         <!-- TEMPLATE SMALL -->
-        <!-- <div class="container"> -->
-
-       <!-- <div class="row" ng-repeat="item in items">
-            <div class="col-md-1">
-                <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-8">
-                <div class="col-md-3">
-                    <img src="img/house-icon.png" style="height: 100px;">
-                </div>
-                <div class="col-md-5">
-                    <h4><i class="glyphicon glyphicon-map-marker"></i>{{item["р-н"]}}</h4>
-                    <p><i class="glyphicon glyphicon-screenshot"></i> {{item["Адреса"]}}, {{item["№ будинку"]}}</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h2 class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></h2>
-                <h2 class="glyphicon glyphicon-heart-empty" aria-hidden="true"></h2>
-                <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
-
-
-                <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p> -->
-
                 <!-- Modal -->
-                <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -279,8 +222,7 @@
                                 <a href="https://www.google.com.ua/maps/dir/49.8171366,24.0232238//@49.8172067,24.0228483,20z" target="_blank"> <h4><i class="glyphicon glyphicon-map-marker"></i>Area</h4> </a>
 
                                 <br>
-
-                                <!- -Icons-->
+                                <!--Icons-->
 
                                     <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4>
                                     <h4 class="glyphicon glyphicon-tree-conifer" style="margin:7px"></h4>
@@ -310,7 +252,7 @@
                             </div>
                             <div class="col-md-5" >
                                 <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4>
-                                <p> 600m</p>
+                                <p>--> 600m</p>
 
 
                             </div>
@@ -320,16 +262,7 @@
                     </div>
                 </div>
               </div>
-          </div> -->
-
+            </div><!--  </div> -->
           </div><!--Well-->
         </div><!--col-lg-8-->
         <!-- /TEMPLATE SMALL -->
-
-
-
-
-
-
-
-    <!-- /container -->
