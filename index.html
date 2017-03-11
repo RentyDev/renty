@@ -10,17 +10,236 @@
     <link rel="icon" href="img/homebuy.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+
+    <!-- <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script> -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
     <!-- <script src="node_modules/angular-route/angular-route.min.js"></script> -->
     <!-- <script src="node_modules/angular-animate/angular-animate.min.js"></script> -->
     <!-- <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script> -->
 
+    <script src="hardcoded.js"></script>
 
     <title>Renty</title>
+
+
+    <style>
+
+
+    #banner {
+      border-bottom: none
+    }
+
+    .page-header h1 {
+      font-size: 4em
+    }
+
+    .bs-docs-section {
+      margin-top: 8em
+    }
+
+    .bs-component {
+      position: relative
+    }
+
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      z-index: 1;
+      display: block
+    }
+
+    .bs-component .modal-dialog {
+      width: 90%
+    }
+
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px
+    }
+
+    #source-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 100;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+
+    .progress {
+      margin-bottom: 10px
+    }
+
+    .splash {
+      padding: 4em 0 0;
+      background-color: #141d27;
+      color: #fff;
+      text-align: center
+    }
+
+    .splash h1 {
+      font-size: 4em
+    }
+
+    .splash #social {
+      margin: 2em 0
+    }
+
+    .splash .alert {
+      margin: 2em 0
+    }
+
+    .section-tout {
+      padding: 4em 0 3em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      background-color: #eaf1f1
+    }
+
+    .section-tout .fa {
+      margin-right: .5em
+    }
+
+    .section-tout p {
+      margin-bottom: 3em
+    }
+
+    .section-preview {
+      padding: 4em 0 4em
+    }
+
+    .section-preview .preview {
+      margin-bottom: 4em;
+      background-color: #eaf1f1
+    }
+
+    .section-preview .preview .image {
+      position: relative
+    }
+
+    .section-preview .preview .image:before {
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      pointer-events: none
+    }
+
+    .section-preview .preview .options {
+      padding: 1em 2em 2em;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-top: none;
+      text-align: center
+    }
+
+    .section-preview .preview .options p {
+      margin-bottom: 2em
+    }
+
+    .section-preview .dropdown-menu {
+      text-align: left
+    }
+
+    .section-preview .lead {
+      margin-bottom: 2em
+    }
+
+    @media (max-width: 767px) {
+      .section-preview .image img {
+        width: 100%
+      }
+    }
+
+    .sponsor {
+      text-align: center
+    }
+
+    .sponsor a:hover {
+      text-decoration: none
+    }
+
+    @media (max-width: 767px) {
+      #banner {
+        margin-bottom: 2em;
+        text-align: center
+      }
+    }
+
+    .infobox .btn-sup {
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 30px;
+    }
+
+    .infobox .btn-sup img {
+      opacity: 0.5;
+      height: 30px;
+    }
+
+    .infobox .btn-sup span {
+      padding-left: 10px;
+      position: relative;
+      top: 2px;
+    }
+
+    .icons-material .row {
+      margin-bottom: 20px;
+    }
+
+    .icons-material .col-xs-2 {
+      text-align: center;
+    }
+
+    .icons-material i {
+      font-size: 34pt;
+    }
+
+    .icon-preview {
+      display: inline-block;
+      padding: 10px;
+      margin: 10px;
+      background: #D5D5D5;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .icon-preview span {
+      display: none;
+      position: absolute;
+      background: black;
+      color: #EEE;
+      padding: 5px 8px;
+      font-size: 15px;
+      border-radius: 2px;
+      z-index: 10;
+    }
+
+    .icon-preview:hover i {
+      color: #4285f4;
+    }
+
+    .icon-preview:hover span {
+      display: block;
+      cursor: text;
+    }
+
+  </style>
 
 </head>
 
@@ -35,49 +254,51 @@
 
     </nav>
 
-    <div class="container">
-
-        <div class="col-md-4 list-group-item">
+    <div class="container" ng-controller="Controller">
+        <div class="col-md-3 list-group-item">
             <div class="block">
 
                 <!-- list-group-items list-group-item-action dropdown dropdown-toggle -->
-                <div data-toggle="collapse" data-target="#demo" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
+                <div data-toggle="collapse" data-target="#demo">Діти </div>
                 <div class="collapse" id="demo">
-                    <div >
-                      
-                          <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                          <span></span>Електропостачання
-                      
+
+                    <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                        <label>
+                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1">
+                        <span></span>Дитячи садок
+                    </label>
+                    </div>
+                    <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                        <label>
+                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1">
+                        <span></span>Гуртки
+                    </label>
+                    </div>
+                    <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
+                        <label>
+                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1">
+                        <span></span>Дитячий майданчик
+                    </label>
+
                     </div>
                     <div>
-                      
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                         <span></span>Водопостачання
-                  
-                    </div>
-                    <div>
-                      
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                         <span></span>Опалення
-                  
-                    </div>
-                    <div>
-                      
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                          <span></span>Справність каналізації
-                  
+
                     </div>
+
                     <div>
-                      
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                          <span></span>Наявність ліфту
-                  
+
                     </div>
                     <div>
-                      
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                          <span></span>Відсутність шкідників
-                  
+
                     </div>
                 </div>
                 <!--випливає-->
@@ -86,99 +307,150 @@
             <div data-toggle="collapse" data-target="#demo1" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
             <div class="collapse" id="demo1">
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Електропостачання
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Водопостачання
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Опалення
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Справність каналізації
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Наявність ліфту
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Відсутність шкідників
-                  
+
                 </div>
             </div>
-            <!--випливає-->
+
+
+
 
 
             <div data-toggle="collapse" data-target="#demo2" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
             <div class="collapse" id="demo2">
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Електропостачання
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Водопостачання
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Опалення
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Справність каналізації
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Наявність ліфту
-                  
+
                 </div>
                 <div>
-                  
+
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Відсутність шкідників
-                  
+
                 </div>
             </div>
             <!--випливає-->
+
         </div>
-        <!--col....-->
 
-        <div class="col-lg-8 col-md-8" ng-controller="itm-ctr">
 
-            <!-- TEMPLATE SMALL -->
+        <div class="col-md-8" ng-controller="itm-ctr">
+          <!-- <div class="well infobox" style="margin-bottom: 100px;"> -->
+          <div class="row well infobox" style="margin-left: 50px;" ng-repeat="item in items">
+                <div class="col-md-1">
+                    <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-3">
+                    <img src="img/house-icon.png" style="height: 100px;">
+                </div>
+                <div class="col-md-5">
+                    <h4><i class="glyphicon glyphicon-map-marker"></i>{{item["р-н"]}}</h4>
+                    <p><i class="glyphicon glyphicon-screenshot"></i> {{item["Адреса"]}}, {{item["№ будинку"]}}</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h2 class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></h2>
+                    <h2 class="glyphicon glyphicon-heart-empty" aria-hidden="true"></h2>
+                    <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
+
+
+                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p>
+                    {{$rootScope.address}}
+                </div>
+
+          <!-- <p><em>Material Design for Bootstrap</em> is a theme for Bootstrap 3 which lets you use the new
+            <a href="http://www.google.com/design/spec/material-design/">Google Material Design</a> in your favorite front-end framework.
+          </p>
+
+          <p>If you like this project you can support me by donating something on Gittip, starring this repository, or
+            <a href="https://github.com/FezVrasta/bootstrap-material-design/issues">reporting bugs and ideas</a>.</p>
+
+          <p>Read more about <em>Material Design for Bootstrap</em>
+            <a href="https://github.com/FezVrasta/bootstrap-material-design">at the Github page</a>.</p>
+
+          <a href="https://github.com/FezVrasta/bootstrap-material-design/archive/master.zip" class="btn btn-sup btn-material-pink btn-raised">
+            <i class="material-icons">file_download</i>
+            <span>DOWNLOAD</span>
+          </a>
+          <a href="https://www.gittip.com/FezVrasta/" class="btn btn-sup btn-material-brown">
+            <i class="material-icons">favorite_border</i>
+            <span>GITTIP</span>
+          </a>
+          <a href="https://github.com/FezVrasta/bootstrap-material-design/issues" class="btn btn-sup btn-material-deeppurple">
+            <i class="material-icons">info_outline</i>
+            <span>ISSUES</span>
+          </a>-->
+        </div><!--row-->
+
+
+             <!-- TEMPLATE SMALL -->
             <!-- <div class="container"> -->
-            <div class="row" ng-repeat="item in items">
+
+           <!-- <div class="row" ng-repeat="item in items">
                 <div class="col-md-1">
                     <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-3">
-                        <img src="https://image.shutterstock.com/z/stock-vector-city-hall-cartoon-city-hall-cartoon-buildings-in-vector-city-hall-lviv-vector-image-of-a-396333235.jpg" style="height: 100px;">
+                        <img src="img/house-icon.png" style="height: 100px;">
                     </div>
                     <div class="col-md-5">
                         <h4><i class="glyphicon glyphicon-map-marker"></i>{{item["р-н"]}}</h4>
@@ -191,10 +463,10 @@
                     <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
 
 
-                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p> -->
 
                     <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -205,16 +477,16 @@
                           <div class="row">
 
 
-                                <div class="col-md-3" > 
+                                <div class="col-md-3" >
                                     <img src="img/house-icon.png" height="130" title="Lviv Head" alt="LvivHead"/>
-                                </div>                                                                                              
+                                </div>
 
                                 <div class="col-md-8 col-md-push-1" style="background-color:#F5EFF1">
                                     <h3>Address</h3>
+
                                     <a href="https://www.google.com.ua/maps/dir/49.8171366,24.0232238//@49.8172067,24.0228483,20z" target="_blank"> <h4><i class="glyphicon glyphicon-map-marker"></i>Area</h4> </a>
-                                    
+
                                     <br>
-                                    <!--Icons-->
 
                                         <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4>
                                         <h4 class="glyphicon glyphicon-tree-conifer" style="margin:7px"></h4>
@@ -242,11 +514,11 @@
                                         <li>Чому зруйновані імперії досі керують людством?</li>
                                     </ul>
                                 </div>
-                                <div class="col-md-5" > 
-                                    <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4> 
-                                    <p>--> 600m</p>
-                                    
-                                    
+                                <div class="col-md-5" >
+                                    <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4>
+                                    <p> 600m</p>
+
+
                                 </div>
                             </div>
 
@@ -256,11 +528,10 @@
                         </div>
                     </div>
                   </div>
-                </div>
+              </div> -->
 
-                    <!--  </div> -->
-                </div>
-            </div>
+              </div><!--Well-->
+            </div><!--col-lg-8-->
             <!-- /TEMPLATE SMALL -->
 
 
@@ -281,6 +552,7 @@
         <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
 
         <script src="js/main.js"></script>
+        <script src="modal.js"></script>
 
 </body>
 

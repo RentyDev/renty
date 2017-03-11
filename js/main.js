@@ -1,4 +1,4 @@
-var app = angular.module("renty-ui", []);
+var app = angular.module("renty-ui", ['angularModalService']);
 
 // app.config(['$httpProvider', function($httpProvider) {
 //         $httpProvider.defaults.useXDomain = true;
@@ -20,6 +20,13 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
         }).then(function successCallback(response) {
             console.log(response);
             $scope.items = response.data.result.records;
+
+            for (var i = 0; i < $scope.items.length; ++i) {
+                $scope.items[i]["р-н"] = districts[$scope.items[i]["р-н"]];
+            }
+
+            console.log($scope.items);
+
         }, function errorCallback(response) {
             console.log(response);
         });
