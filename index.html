@@ -10,6 +10,9 @@
     <link rel="icon" href="img/homebuy.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -21,6 +24,218 @@
 
 
     <title>Renty</title>
+
+
+    <style>
+    
+
+    #banner {
+      border-bottom: none
+    }
+
+    .page-header h1 {
+      font-size: 4em
+    }
+
+    .bs-docs-section {
+      margin-top: 8em
+    }
+
+    .bs-component {
+      position: relative
+    }
+
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      z-index: 1;
+      display: block
+    }
+
+    .bs-component .modal-dialog {
+      width: 90%
+    }
+
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px
+    }
+
+    #source-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 100;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+
+    .progress {
+      margin-bottom: 10px
+    }
+
+    .splash {
+      padding: 4em 0 0;
+      background-color: #141d27;
+      color: #fff;
+      text-align: center
+    }
+
+    .splash h1 {
+      font-size: 4em
+    }
+
+    .splash #social {
+      margin: 2em 0
+    }
+
+    .splash .alert {
+      margin: 2em 0
+    }
+
+    .section-tout {
+      padding: 4em 0 3em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      background-color: #eaf1f1
+    }
+
+    .section-tout .fa {
+      margin-right: .5em
+    }
+
+    .section-tout p {
+      margin-bottom: 3em
+    }
+
+    .section-preview {
+      padding: 4em 0 4em
+    }
+
+    .section-preview .preview {
+      margin-bottom: 4em;
+      background-color: #eaf1f1
+    }
+
+    .section-preview .preview .image {
+      position: relative
+    }
+
+    .section-preview .preview .image:before {
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      pointer-events: none
+    }
+
+    .section-preview .preview .options {
+      padding: 1em 2em 2em;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-top: none;
+      text-align: center
+    }
+
+    .section-preview .preview .options p {
+      margin-bottom: 2em
+    }
+
+    .section-preview .dropdown-menu {
+      text-align: left
+    }
+
+    .section-preview .lead {
+      margin-bottom: 2em
+    }
+
+    @media (max-width: 767px) {
+      .section-preview .image img {
+        width: 100%
+      }
+    }
+
+    .sponsor {
+      text-align: center
+    }
+
+    .sponsor a:hover {
+      text-decoration: none
+    }
+
+    @media (max-width: 767px) {
+      #banner {
+        margin-bottom: 2em;
+        text-align: center
+      }
+    }
+
+    .infobox .btn-sup {
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 30px;
+    }
+
+    .infobox .btn-sup img {
+      opacity: 0.5;
+      height: 30px;
+    }
+
+    .infobox .btn-sup span {
+      padding-left: 10px;
+      position: relative;
+      top: 2px;
+    }
+
+    .icons-material .row {
+      margin-bottom: 20px;
+    }
+
+    .icons-material .col-xs-2 {
+      text-align: center;
+    }
+
+    .icons-material i {
+      font-size: 34pt;
+    }
+
+    .icon-preview {
+      display: inline-block;
+      padding: 10px;
+      margin: 10px;
+      background: #D5D5D5;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .icon-preview span {
+      display: none;
+      position: absolute;
+      background: black;
+      color: #EEE;
+      padding: 5px 8px;
+      font-size: 15px;
+      border-radius: 2px;
+      z-index: 10;
+    }
+
+    .icon-preview:hover i {
+      color: #4285f4;
+    }
+
+    .icon-preview:hover span {
+      display: block;
+      cursor: text;
+    }
+
+  </style>
 
 </head>
 
@@ -37,7 +252,7 @@
 
     <div class="container">
 
-        <div class="col-md-4 list-group-item">
+        <div class="col-md-3 list-group-item">
             <div class="block">
 
                 <!-- list-group-items list-group-item-action dropdown dropdown-toggle -->
@@ -168,11 +383,58 @@
         </div>
         <!--col....-->
 
-        <div class="col-lg-8 col-md-8" ng-controller="itm-ctr">
+        <div class="col-md-8" ng-controller="itm-ctr">
+          <!-- <div class="well infobox" style="margin-bottom: 100px;"> -->
+          <div class="row well infobox" style="margin-left: 50px;" ng-repeat="item in items">
+                <div class="col-md-1">
+                    <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-3">
+                    <img src="img/house-icon.png" style="height: 100px;">
+                </div>
+                <div class="col-md-5">
+                    <h4><i class="glyphicon glyphicon-map-marker"></i>{{item["р-н"]}}</h4>
+                    <p><i class="glyphicon glyphicon-screenshot"></i> {{item["Адреса"]}}, {{item["№ будинку"]}}</p>
+                </div>
+                
+                <div class="col-md-3">
+                    <h2 class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></h2>
+                    <h2 class="glyphicon glyphicon-heart-empty" aria-hidden="true"></h2>
+                    <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
 
-            <!-- TEMPLATE SMALL -->
+
+                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p> 
+                </div>
+
+          <!-- <p><em>Material Design for Bootstrap</em> is a theme for Bootstrap 3 which lets you use the new
+            <a href="http://www.google.com/design/spec/material-design/">Google Material Design</a> in your favorite front-end framework.
+          </p>
+
+          <p>If you like this project you can support me by donating something on Gittip, starring this repository, or
+            <a href="https://github.com/FezVrasta/bootstrap-material-design/issues">reporting bugs and ideas</a>.</p>
+
+          <p>Read more about <em>Material Design for Bootstrap</em>
+            <a href="https://github.com/FezVrasta/bootstrap-material-design">at the Github page</a>.</p>
+
+          <a href="https://github.com/FezVrasta/bootstrap-material-design/archive/master.zip" class="btn btn-sup btn-material-pink btn-raised">
+            <i class="material-icons">file_download</i>
+            <span>DOWNLOAD</span>
+          </a>
+          <a href="https://www.gittip.com/FezVrasta/" class="btn btn-sup btn-material-brown">
+            <i class="material-icons">favorite_border</i>
+            <span>GITTIP</span>
+          </a>
+          <a href="https://github.com/FezVrasta/bootstrap-material-design/issues" class="btn btn-sup btn-material-deeppurple">
+            <i class="material-icons">info_outline</i>
+            <span>ISSUES</span> 
+          </a>-->
+        </div><!--row-->
+
+
+             <!-- TEMPLATE SMALL -->
             <!-- <div class="container"> -->
-            <div class="row" ng-repeat="item in items">
+            
+           <!-- <div class="row" ng-repeat="item in items">
                 <div class="col-md-1">
                     <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
                 </div>
@@ -191,7 +453,7 @@
                     <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
 
 
-                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p>
+                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p> -->
 
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -256,11 +518,9 @@
                         </div>
                     </div>
                   </div>
-                </div>
-
-                    <!--  </div> -->
-                </div>
-            </div>
+                </div><!--  </div> -->
+              </div><!--Well-->
+            </div><!--col-lg-8-->
             <!-- /TEMPLATE SMALL -->
 
 
