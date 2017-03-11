@@ -10,8 +10,8 @@
     <link rel="icon" href="img/homebuy.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
@@ -42,7 +42,7 @@
             <div class="block">
 
                 <!-- list-group-items list-group-item-action dropdown dropdown-toggle -->
-                <div data-toggle="collapse" data-target="#demo">Комуналка </div>
+                <div data-toggle="collapse" data-target="#demo" style="font-size: 25px;">Комуналка<span class="caret"></span> </div>
                 <div class="collapse" id="demo">
                     <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                         <label>
@@ -84,7 +84,7 @@
                 <!--випливає-->
             </div>
 
-            <div data-toggle="collapse" data-target="#demo1">Комуналка </div>
+            <div data-toggle="collapse" data-target="#demo1" style="font-size: 25px;">Комуналка<span class="caret"></span> </div>
             <div class="collapse" id="demo1">
                 <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                     <label>
@@ -126,7 +126,7 @@
             <!--випливає-->
 
 
-            <div data-toggle="collapse" data-target="#demo2">Комуналка </div>
+            <div data-toggle="collapse" data-target="#demo2" style="font-size: 25px;">Комуналка<span class="caret"></span> </div>
             <div class="collapse" id="demo2">
                 <div class="dynamic-check checkbox l-catalog-sidebar-checkbox">
                     <label>
@@ -174,16 +174,16 @@
             <!-- TEMPLATE SMALL -->
             <!-- <div class="container"> -->
             <div class="row" ng-repeat="item in items">
-                <div class="col-md-1">
-                    <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
+                  <div class="col-md-1">
+                      <h1>5</h1><i class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                  </div>
                     <div class="col-md-3">
                         <img src="https://image.shutterstock.com/z/stock-vector-city-hall-cartoon-city-hall-cartoon-buildings-in-vector-city-hall-lviv-vector-image-of-a-396333235.jpg" style="height: 100px;">
                     </div>
                     <div class="col-md-5">
-                        <h4><i class="glyphicon glyphicon-map-marker"></i> Район Львова</h4>
-                        <p><i class="glyphicon glyphicon-screenshot"></i> Вулиця, номер будинку</p>
+                        <h4><i class="glyphicon glyphicon-map-marker"></i> {{item.region}}</h4>
+                        <p><i class="glyphicon glyphicon-screenshot"></i> {{item.street}}</p>
                     </div>
                 </div>
                 <div class="col-md-3" style="text-align: right;">
@@ -195,7 +195,7 @@
                     <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
 
                     <!-- Modal -->
-                    <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -212,7 +212,7 @@
                       </div>
                     </div>
                   </div>
-                </div> -->
+                </div> 
 
                     <!--  </div> -->
                 </div>
