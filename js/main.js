@@ -17,11 +17,19 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
             url: "http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT \"Адреса\", \"№ будинку\", \"р-н\" from \"64a169c2-ab09-4fcf-96c5-f89ffc409315\" LIMIT 10&callback=JSON_CALLBACK"
         }).then(function successCallback(response) {
             console.log(response);
-            $scope.buildings = response.data.result.records;
 
-            for (var i = 0; i < $scope.buildings.length; ++i) {
-                $scope.buildings[i]["р-н"] = districts[$scope.buildings[i]["р-н"]];
+            $scope.buildings = [];
+
+            // WARNING: ES6 only
+            for (var record of response.data.result.records) {
+                console.log(record);
+                $scope.buildings.push({
+                    street: record["Адреса"],
+                    number: record["№ будинку"],
+                    district: districts[record["р-н"]]
+                });
             }
+            console.log($scope.buildings)
 
         }, function errorCallback(response) {
             console.error(response);
