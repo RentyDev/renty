@@ -24,7 +24,9 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
                 $scope.buildings.push({
                     street: record["Адреса"],
                     number: record["№ будинку"],
-                    district: districts[record["р-н"]]
+                    district: districts[record["р-н"]],
+                    price: Math.floor((Math.random() * 1800) + 1200),
+                    rating: Math.floor((Math.random() * 10) + 1)
                 });
             }
 
