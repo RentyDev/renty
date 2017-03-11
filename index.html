@@ -13,10 +13,13 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
     <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
 
+    <!-- <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script> -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
     <!-- <script src="node_modules/angular-route/angular-route.min.js"></script> -->
     <!-- <script src="node_modules/angular-animate/angular-animate.min.js"></script> -->
     <!-- <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script> -->
@@ -251,7 +254,7 @@
 
     </nav>
 
-    <div class="container">
+    <div class="container" ng-controller="Controller">
         <div class="col-md-3 list-group-item">
             <div class="block">
 
@@ -409,7 +412,7 @@
                     <h2 class="glyphicon glyphicon-plus" aria-hidden="true"></h2>
 
 
-                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p>
+                    <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href ng-click="show()" role="button">Детальніше &raquo;</a></p>
                 </div>
 
           <!-- <p><em>Material Design for Bootstrap</em> is a theme for Bootstrap 3 which lets you use the new
@@ -462,7 +465,7 @@
                     <p type="button" data-toggle="modal" data-target="#myModal"><a class="btn btn-secondary" href="#" role="button">Детальніше &raquo;</a></p> -->
 
                     <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -483,7 +486,6 @@
                                     <a href="https://www.google.com.ua/maps/dir/49.8171366,24.0232238//@49.8172067,24.0228483,20z" target="_blank"> <h4><i class="glyphicon glyphicon-map-marker"></i>Area</h4> </a>
 
                                     <br>
-                                    <!--Icons-->
 
                                         <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4>
                                         <h4 class="glyphicon glyphicon-tree-conifer" style="margin:7px"></h4>
@@ -513,7 +515,7 @@
                                 </div>
                                 <div class="col-md-5" >
                                     <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4>
-                                    <p>--> 600m</p>
+                                    <p> 600m</p>
 
 
                                 </div>
@@ -525,7 +527,8 @@
                         </div>
                     </div>
                   </div>
-              </div><!--  </Modal> -->
+              </div> -->
+
               </div><!--Well-->
             </div><!--col-lg-8-->
             <!-- /TEMPLATE SMALL -->
@@ -548,6 +551,7 @@
         <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
 
         <script src="js/main.js"></script>
+        <script src="modal.js"></script>
 
 </body>
 

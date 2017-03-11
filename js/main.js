@@ -1,4 +1,4 @@
-var app = angular.module("renty-ui", []);
+var app = angular.module("renty-ui", ['angularModalService']);
 
 // app.config(['$httpProvider', function($httpProvider) {
 //         $httpProvider.defaults.useXDomain = true;
@@ -36,6 +36,12 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
         });
     };
 
+<<<<<<< HEAD
+=======
+    // this.getBuildings();
+    // console.log($scope.items);
+
+>>>>>>> 893904c41b6df5d2535f8888fe9868127e821e3d
     this.getComplaints = function (address, no) {
         $http({
             method: 'JSONP',
@@ -52,6 +58,17 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
         });
     };
 
+<<<<<<< HEAD
     this.getBuildings();
     this.getComplaints("Авіаційна", "7");
+=======
+    this.getComplaints("Широка", "67");
+
+    // this.calculateRating = function () {
+    //
+    // };
+
+    // this.getBuilding("Авіаційна", "7");
+
+>>>>>>> 893904c41b6df5d2535f8888fe9868127e821e3d
 }]);
