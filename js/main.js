@@ -25,6 +25,4 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
         });
     };
 
-
-
 }]);
