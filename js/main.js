@@ -1,4 +1,4 @@
-var app = angular.module("renty-ui", []);
+var app = angular.module("renty-ui", ['angularModalService', 'ngRoute']);
 
 // app.config(['$httpProvider', function($httpProvider) {
 //         $httpProvider.defaults.useXDomain = true;
@@ -7,8 +7,6 @@ var app = angular.module("renty-ui", []);
 // ]);
 
 app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $document, $http) {
-    $scope.items = [{}, {}];
-
     this.getBuildings = function () {
         $http({
             method: 'JSONP',
@@ -16,24 +14,24 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
                 format: 'jsonp',
                 json_callback: 'JSON_CALLBACK'
             },
-            url: "http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT \"Адреса\", \"№ будинку\", \"р-н\" from \"64a169c2-ab09-4fcf-96c5-f89ffc409315\" LIMIT 10&callback=JSON_CALLBACK"
+            url: "http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT \"Адреса\", \"№ будинку\", \"№ (літера чи дріб)\", \"р-н\" from \"64a169c2-ab09-4fcf-96c5-f89ffc409315\" LIMIT 10&callback=JSON_CALLBACK"
         }).then(function successCallback(response) {
-            console.log(response);
-            $scope.items = response.data.result.records;
 
-            for (var i = 0; i < $scope.items.length; ++i) {
-                $scope.items[i]["р-н"] = districts[$scope.items[i]["р-н"]];
+            $scope.buildings = [];
+
+            // WARNING: ES6 only
+            for (var record of response.data.result.records) {
+                $scope.buildings.push({
+                    street: record["Адреса"],
+                    number: record["№ будинку"] + record["№ (літера чи дріб)"],
+                    district: districts[record["р-н"]]
+                });
             }
 
-            console.log($scope.items);
-
         }, function errorCallback(response) {
-            console.log(response);
+            console.error(response);
         });
     };
-
-    this.getBuildings();
-    console.log($scope.items);
 
     this.getComplaints = function (address, no) {
         $http({
@@ -44,13 +42,62 @@ app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $doc
             },
             url: "http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT \"Type\", \"Date\" from \"a42bf588-269d-4590-b19c-e940cab296fb\" WHERE \"Street\"='"+address+"' AND \"Nober\"='"+no+"'&callback=JSON_CALLBACK"
         }).then(function successCallback(response) {
-            console.log(response);
-            $scope.items = response.data.result.records;
+            $scope.complaints = [];
+
+            // WARNING: ES6 only
+            for (var record of response.data.result.records) {
+                $scope.complaints.push({
+                    date: record["Date"],
+                    text: record["Type"]
+                });
+            }
+
+            console.log($scope.complaints)
+
         }, function errorCallback(response) {
-            console.log(response);
+            console.error(response);
         });
     };
 
-    // this.getBuilding("Авіаційна", "7");
-
+    this.getBuildings();
+    this.getComplaints("Лісна", "16");
 }]);
+
+// app.config(['$httpProvider', '$stateProvider', '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
+//     $stateProvider
+//       .state('common', {
+//         templateUrl: 'pages/home.html',
+//         abstract: true,
+//         });
+//
+//     // $urlRouterProvider.otherwise('/crm');
+// }]);
+
+app.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/home');
+
+    $stateProvider
+        // HOME STATES AND NESTED VIEWS ========================================
+        .state('home', {
+            url: '/home',
+            templateUrl: 'pages/home.html'
+        })
+
+        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+        .state('about', {
+            // we'll get to this in a bit
+        });
+});
+
+// .state('dashboard', {
+//   url: '/dashboard',
+//   parent: 'common'
+// })
+// .state('crm', {
+//   url: '/crm',
+//   parent: 'common'
+// })
+// .state('login', {
+//   url: '/login',
+//   templateUrl: 'tpl.login.html',
+// });
