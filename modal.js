@@ -1,5 +1,5 @@
 
-app.controller('Controller', function($scope, ModalService) {
+app.controller('Controller', ["$scope", "$q", "ModalService", function($scope, $q, ModalService) {
 
     $scope.show = function() {
         ModalService.showModal({
@@ -13,13 +13,13 @@ app.controller('Controller', function($scope, ModalService) {
         });
     };
 
-});
+}]);
 
 
-app.controller('ModalController', function($scope, close) {
+app.controller('ModalController', ["$scope", "$q", "close", function($scope, $q, close) {
 
     $scope.close = function(result) {
         close(result, 500); // close, but give 500ms for bootstrap to animate
     };
 
-});
+}]);
