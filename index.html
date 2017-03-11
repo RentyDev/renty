@@ -34,20 +34,28 @@
 </head>
 
 <body ng-app="renty-ui">
+    
+    <header>
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+            <div class="col-md-6">
+                <h2 style="color: #52c5d9;"><img src="img/homebuy.png">Renty</h2>
+            </div>
+            
+            <a class="btn btn-default" href="#" role="button">Link</a>
+            <button class="btn btn-default" type="submit">Button</button>
+            <input class="btn btn-default" type="button" value="Input">
+            <input class="btn btn-default" type="submit" value="Submit">
 
-        <div class="col-md-6">
+        </nav>
+    </header>
 
-            <h2 style="color: #52c5d9;"><img src="img/homebuy.png">Renty</h2>
-        </div>
-
-    </nav>
-
+    <!--
     <div class="container">
         <div class="col-md-3 list-group-item">
             <div class="block">
                   
+<<<<<<< HEAD
             <div data-toggle="collapse" data-target="#demo" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
                 <div class="collapse" id="demo">
                   <div>
@@ -69,21 +77,74 @@
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
                         <span></span>Справність каналізації
                 </div>
+=======
+            <div data-toggle="collapse" data-target="#demo" style="font-size: 22px;" class="list-group-item">Здоров'я<i class="caret"></i> </div>
+                <div class="collapse" id="demo">
+                    <div>
+
+                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                        <span></span>Аптека
+
+                    </div>
+    
+          
+                </div>
+            </div>
+
+        </div>
+    </div>
+-->
+    
+    
+    <div class="container">
+        <div class="col-md-3 list-group-item">
+            
+            
+            <div class="block">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">HotPoint address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+                    </div>
+                  <button type="submit" class="btn btn-default" >Submit</button>
+                </form>
+            </div>
+            
+            <br>
+            
+            
+            <div class="block">
+                  
+            <div data-toggle="collapse" data-target="#demo" style="font-size: 22px;" class="list-group-item">Здоров'я<i class="caret"></i> </div>
+            <div class="collapse" id="demo">
+>>>>>>> origin/master
                 <div>
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+<<<<<<< HEAD
                         <span></span>Наявність ліфту
+=======
+                        <span></span>Аптека
+
+>>>>>>> origin/master
                 </div>
                 <div>
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+<<<<<<< HEAD
                         <span></span>Відсутність шкідників
+=======
+                        <span></span>Лікарня
+
+>>>>>>> origin/master
                 </div>
+                
+               
             </div>
             <!--випливає-->
             </div>
                     
-
-            <div data-toggle="collapse" data-target="#demo1" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
-            <div class="collapse" id="demo1">
+            <div class="block">
+                <div data-toggle="collapse" data-target="#demo1" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
+                <div class="collapse" id="demo1">
                 <div>
 
                         <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
@@ -121,53 +182,61 @@
 
                 </div>
             </div>
-
-
-
-
-
-            <div data-toggle="collapse" data-target="#demo2" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
-            <div class="collapse" id="demo2">
-                <div>
-
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                        <span></span>Електропостачання
-
-                </div>
-                <div>
-
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                        <span></span>Водопостачання
-
-                </div>
-                <div>
-
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                        <span></span>Опалення
-
-                </div>
-                <div>
-
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                        <span></span>Справність каналізації
-
-                </div>
-                <div>
-
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                        <span></span>Наявність ліфту
-
-                </div>
-                <div>
-
-                        <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
-                        <span></span>Відсутність шкідників
-
-                </div>
             </div>
-            <!--випливає-->
+
+            <div class="block">
+                <div data-toggle="collapse" data-target="#demo2" style="font-size: 22px;" class="list-group-item">Комуналка<i class="caret"></i> </div>
+                <div class="collapse" id="demo2">
+                    <div>
+
+                            <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                            <span></span>Електропостачання
+
+                    </div>
+                    <div>
+
+                            <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                            <span></span>Водопостачання
+
+                    </div>
+                    <div>
+
+                            <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                            <span></span>Опалення
+
+                    </div>
+                    <div>
+
+                            <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                            <span></span>Справність каналізації
+
+                    </div>
+                    <div>
+
+                            <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                            <span></span>Наявність ліфту
+
+                    </div>
+                    <div>
+
+                            <input type="range" id="myRange" min="0" max="5"  value="5" step="1" style="width: 50%;">
+                            <span></span>Відсутність шкідників
+
+                    </div>
+                </div>
+                <!--випливає-->
+            </div>
+            
+            
+            
+                    
+
+
+        
 
         </div>
+        
+        
 
 
         <div class="col-md-8" ng-controller="itm-ctr">
@@ -216,7 +285,7 @@
 
                                     <br>
                                     <!--Icons-->
-
+                                    
                                         <h4 class="glyphicon glyphicon-cutlery" style="margin:7px"></h4>
                                         <h4 class="glyphicon glyphicon-tree-conifer" style="margin:7px"></h4>
                                         <h4 class="glyphicon glyphicon-plus-sign" style="margin:7px"></h4>
@@ -251,9 +320,7 @@
                                 </div>
                             </div>
 
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          </div>
+
                         </div>
                     </div>
                   </div>
@@ -267,7 +334,7 @@
 
 
 
-        </div>
+        
         <!-- /container -->
         <footer>
             <p>&copy; Company 2017</p>
