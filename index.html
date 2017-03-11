@@ -29,99 +29,6 @@
 
     <style>
 
-
-    #banner {
-      border-bottom: none
-    }
-
-    .page-header h1 {
-      font-size: 4em
-    }
-
-    .bs-docs-section {
-      margin-top: 8em
-    }
-
-    .bs-component {
-      position: relative
-    }
-
-    .bs-component .modal {
-      position: relative;
-      top: auto;
-      right: auto;
-      left: auto;
-      bottom: auto;
-      z-index: 1;
-      display: block
-    }
-
-    .bs-component .modal-dialog {
-      width: 90%
-    }
-
-    .bs-component .popover {
-      position: relative;
-      display: inline-block;
-      width: 220px;
-      margin: 20px
-    }
-
-    #source-button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 100;
-      font-weight: bold;
-      padding: 5px 10px;
-    }
-
-    .progress {
-      margin-bottom: 10px
-    }
-
-    .splash {
-      padding: 4em 0 0;
-      background-color: #141d27;
-      color: #fff;
-      text-align: center
-    }
-
-    .splash h1 {
-      font-size: 4em
-    }
-
-    .splash #social {
-      margin: 2em 0
-    }
-
-    .splash .alert {
-      margin: 2em 0
-    }
-
-    .section-tout {
-      padding: 4em 0 3em;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      background-color: #eaf1f1
-    }
-
-    .section-tout .fa {
-      margin-right: .5em
-    }
-
-    .section-tout p {
-      margin-bottom: 3em
-    }
-
-    .section-preview {
-      padding: 4em 0 4em
-    }
-
-    .section-preview .preview {
-      margin-bottom: 4em;
-      background-color: #eaf1f1
-    }
-
     .section-preview .preview .image {
       position: relative
     }
@@ -141,7 +48,7 @@
       padding: 1em 2em 2em;
       border: 1px solid rgba(0, 0, 0, 0.05);
       border-top: none;
-      text-align: center
+      text-align: center;
     }
 
     .section-preview .preview .options p {
@@ -396,8 +303,8 @@
                     <img src="img/house-icon.png" style="height: 100px;">
                 </div>
                 <div class="col-md-5">
-                    <h4><i class="glyphicon glyphicon-map-marker"></i>{{item["р-н"]}}</h4>
-                    <p><i class="glyphicon glyphicon-screenshot"></i> {{item["Адреса"]}}, {{item["№ будинку"]}}</p>
+                    <h4><i class="glyphicon glyphicon-map-marker"></i>{{item["Адреса"]}}, {{item["№ будинку"]}}</h4>
+                    <p><i class="glyphicon glyphicon-screenshot"></i>{{item["р-н"]}} </p>
                 </div>
 
                 <div class="col-md-3">
