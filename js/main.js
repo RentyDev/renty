@@ -9,31 +9,22 @@ var app = angular.module("renty-ui", []);
 app.controller('itm-ctr', ['$scope', '$document', '$http', function($scope, $document, $http) {
     $scope.items = [{}, {}];
 
-    // var headers = {
-	// 	'Access-Control-Allow-Origin' : '*',
-	// 	'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
-	// 	'Content-Type': 'application/json',
-	// 	'Accept': 'application/json'
-	// };
-    //
-    // // $http.jsonp();
-    //
-    // $http.jsonp("http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT \"Type\" from \"a42bf588-269d-4590-b19c-e940cab296fb\" WHERE \"Street\"='Липи Ю.' AND \"Nober\"='16'")
-    // .success(function(data){
-    //     console.log(data);
-    // });
+    this.getBuilding = function (address, no) {
+        $http({
+            method: 'JSONP',
+            params: {
+                format: 'jsonp',
+                json_callback: 'JSON_CALLBACK'
+            },
+            url: "http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT \"Type\" from \"a42bf588-269d-4590-b19c-e940cab296fb\" WHERE \"Street\"='"+address+"' AND \"Nober\"='"+no+"'&callback=JSON_CALLBACK"
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.items = response.data.result.records;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    };
 
 
-    $http({
-        method: 'JSONP',
-        params: {
-            format: 'jsonp',
-            json_callback: 'JSON_CALLBACK'
-        },
-        url: "http://opendata.city-adm.lviv.ua/api/action/datastore_search_sql?sql=SELECT \"Type\" from \"a42bf588-269d-4590-b19c-e940cab296fb\" WHERE \"Street\"='Липи Ю.' AND \"Nober\"='16'&callback=JSON_CALLBACK"
-    }).then(function successCallback(response) {
-        console.log(response);
-    }, function errorCallback(response) {
-        console.log(response);
-    });
+
 }]);
