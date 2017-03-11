@@ -1,6 +1,6 @@
 
 app.controller('Controller', ["$scope", "$q", "ModalService", function($scope, $q, ModalService) {
-
+    console.log("Hello, world!");
     $scope.show = function() {
         ModalService.showModal({
             templateUrl: 'modal.html',
