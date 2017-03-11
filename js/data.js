@@ -20,7 +20,6 @@ var DC = {
             }
         });
     }
-
 }
 
 // let database = new DatabaseConnector();
